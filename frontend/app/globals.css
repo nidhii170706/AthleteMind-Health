@@ -1,0 +1,212 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Planetary Hover & Side-to-Side Tilt Animations */
+@keyframes planetFloatTilt1 {
+  0%, 100% {
+    transform: translateY(0px) rotate(-3.5deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(4deg);
+  }
+}
+
+@keyframes planetFloatTilt2 {
+  0%, 100% {
+    transform: translateY(-8px) rotate(3deg);
+  }
+  50% {
+    transform: translateY(7px) rotate(-3.5deg);
+  }
+}
+
+@keyframes planetFloatTilt3 {
+  0%, 100% {
+    transform: translateY(5px) rotate(-4.5deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(3deg);
+  }
+}
+
+@keyframes planetFloatTilt4 {
+  0%, 100% {
+    transform: translateY(-6px) rotate(4deg);
+  }
+  50% {
+    transform: translateY(8px) rotate(-3.5deg);
+  }
+}
+
+@keyframes planetFloatTilt5 {
+  0%, 100% {
+    transform: translateY(0px) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(4.5deg);
+  }
+}
+
+.animate-planet-1 {
+  animation: planetFloatTilt1 5.2s ease-in-out infinite;
+}
+
+.animate-planet-2 {
+  animation: planetFloatTilt2 6s ease-in-out infinite 0.5s;
+}
+
+.animate-planet-3 {
+  animation: planetFloatTilt3 6.6s ease-in-out infinite 1.2s;
+}
+
+.animate-planet-4 {
+  animation: planetFloatTilt4 5.6s ease-in-out infinite 0.3s;
+}
+
+.animate-planet-5 {
+  animation: planetFloatTilt5 7.2s ease-in-out infinite 0.9s;
+}
+
+/* Sun Hover & Libration Animation */
+@keyframes planetFloatTiltSun {
+  0%, 100% {
+    transform: translateY(0px) rotate(-2.5deg);
+  }
+  50% {
+    transform: translateY(-11px) rotate(3deg);
+  }
+}
+
+.animate-sun {
+  animation: planetFloatTiltSun 6.2s ease-in-out infinite;
+}
+
+/* Giant Flagship Rocket Cruise Animation */
+@keyframes rocketCruise {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1.2deg);
+  }
+}
+
+.animate-rocket-float {
+  animation: rocketCruise 4.5s ease-in-out infinite;
+}
+
+/* Ship Explosion Rumble & Vaporization Keyframes */
+@keyframes shipRumbleExplode {
+  0% {
+    transform: translate(0, 0) scale(1);
+    filter: brightness(100%) drop-shadow(0 0 10px rgba(0, 240, 255, 0.4));
+  }
+  15% {
+    transform: translate(-10px, 8px) scale(1.02);
+    filter: brightness(250%) contrast(150%) drop-shadow(0 0 35px rgba(255, 100, 0, 0.9));
+  }
+  30% {
+    transform: translate(12px, -10px) scale(1.06);
+    filter: brightness(450%) drop-shadow(0 0 60px rgba(255, 200, 0, 1));
+  }
+  50% {
+    transform: translate(-14px, -8px) scale(1.15);
+    filter: brightness(600%);
+    opacity: 0.9;
+  }
+  70% {
+    transform: translate(10px, 12px) scale(1.28);
+    filter: brightness(800%);
+    opacity: 0.5;
+  }
+  90% {
+    transform: translate(-4px, 4px) scale(1.4);
+    filter: brightness(1000%);
+    opacity: 0.15;
+  }
+  100% {
+    transform: translate(0, 0) scale(1.5);
+    filter: brightness(1200%);
+    opacity: 0;
+  }
+}
+
+.animate-ship-explode {
+  animation: shipRumbleExplode 1.05s ease-out forwards;
+}
+
+/* Expanding Supernova Fireball */
+@keyframes fireballBurst {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  20% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.9);
+    opacity: 0.95;
+    filter: brightness(200%);
+  }
+  100% {
+    transform: scale(3.2);
+    opacity: 0;
+    filter: blur(10px);
+  }
+}
+
+.animate-fireball {
+  animation: fireballBurst 1.1s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
+}
+
+/* Plasma Shockwave Expanding Ring */
+@keyframes shockwaveRing {
+  0% {
+    transform: scale(0.05);
+    opacity: 1;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(4.0);
+    opacity: 0;
+  }
+}
+
+.animate-shockwave {
+  animation: shockwaveRing 1.05s ease-out forwards;
+}
+
+/* Secondary Golden Shockwave Ring */
+.animate-shockwave-delay {
+  animation: shockwaveRing 1.05s ease-out 0.15s forwards;
+}
+
+
